@@ -1,0 +1,26 @@
+{
+  "name": "original",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "dependencies": {
+    "aos": "^3.0.0-beta.6",
+    "bootstrap": "^5.2.2",
+    "core-js": "^3.25.3",
+    "normalize.css": "^8.0.1",
+    "nuxt": "^2.15.8",
+    "vue": "^2.7.10",
+    "vue-server-renderer": "^2.7.10",
+    "vue-slick-carousel": "^1.0.6",
+    "vue-template-compiler": "^2.7.10"
+  },
+  "devDependencies": {
+    "node-sass": "^6.0.0",
+    "sass-loader": "^10"
+  }
+}

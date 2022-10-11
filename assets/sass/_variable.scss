@@ -1,0 +1,81 @@
+//
+$enable-grid-classes:         true !default;
+$enable-important-utilities:  true !default;
+
+// 欄位設定
+$grid-columns:                12 !default;
+$grid-gutter-width:           1.5rem !default;
+$container-padding-x:         $grid-gutter-width * .5 !default;
+
+$timing-function:     cubic-bezier(.35, .7, 1, 1);
+
+// breakpoint
+$grid-breakpoints: (
+  xs: 0,
+  sm: 360px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1280px,
+) !default;
+
+// breakpoint 內，內文寬度
+$container-max-widths: (
+  sm: 100%,
+  md: 720px,
+  lg: 960px,
+  xl: 1224px,
+) !default;
+
+// 間距設定
+$spacer:  0.0625rem; //1px
+$spacers: (
+  "0":  $spacer * 0,
+  "5":  $spacer * 5,
+  "10": $spacer * 10,
+  "15": $spacer * 15,
+  "20": $spacer * 20,
+  "30": $spacer * 30,
+  "40": $spacer * 40,
+  "auto": auto,
+);
+
+$font-weight-lighter:         lighter !default;
+$font-weight-light:           300 !default;
+$font-weight-normal:          400 !default;
+$font-weight-bold:            700 !default;
+$font-weight-bolder:          bolder !default;
+
+$border-radius:               .375rem !default;
+$border-radius-sm:            .2rem !default;
+$border-radius-lg:            .5rem !default;
+$border-radius-pill:          50rem !default;
+
+// ---------------------------------------------------------
+
+$font-size-base: 0.9375rem; //15px
+
+// header text 設定
+$h1: $spacer * 28; //28px
+$h2: $spacer * 20; //20px
+$h3: $spacer * 18; //18px
+$h4: $spacer * 16; //16px
+$h5: $spacer * 14; //14px
+$h6: $spacer * 12; //12px
+
+// ---------------------------------------------------------
+
+// 灰色階色碼
+$gray-100:           #F2F2F2 !default;
+$gray-200:           #505050 !default;
+$gray-300:           #131313 !default;
+
+// 主色階色碼
+$primary-100:        #F0EDE8 !default;
+$primary-200:        #F2EEE6 !default;
+$primary-300:        #DBBB76 !default;
+$primary-400:        #DFAD77 !default;
+$primary-500:        #D68F4C !default;
+
+// 無彩色色碼
+$white:              #FFFFFF !default;
+$black:                $gray-300 !default;
