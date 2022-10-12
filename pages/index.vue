@@ -1,5 +1,6 @@
 <template>
   <main>
+    <Ring />
     <Concept :emit-data="value.concept" />
     <Collection :emit-data="value.collection" />
     <Service
