@@ -1,6 +1,11 @@
 <template>
   <section>
     <div class="row">
+      <Ring
+        class="kv__ring"
+        :emitId="'kv__ring'"
+        :emitWidth="185"
+      />
       <div class="kv__img kv__img--right">
         <img src="/images/white-cotton-buds-on-white-surface.jpg" class="img-fluid" alt="white-cotton-buds-on-white-surface">
       </div>
@@ -114,6 +119,15 @@
         }
       }
     }
+  }
+  .kv__ring {
+    position: absolute;
+    top: 178px;
+    left: 50%;
+    width: auto;
+    padding: 0;
+    transform: translate(-50%, -50%);
+    z-index: 2;
   }
   .kv__img {
     position: relative;

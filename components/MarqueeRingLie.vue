@@ -28,7 +28,7 @@
       initModelContainer() {
         this.model_container = document.getElementById(this.emitId);
         this.width = this.emitWidth;
-        this.height = this.emitWidth;
+        this.height = this.emitWidth * 0.847826087;
       },
       initScene() {
         this.scene = new THREE.Scene();
@@ -42,7 +42,7 @@
         this.camera.lookAt(this.scene.position);
 
         this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-        this.renderer.setSize(this.width, this.height);
+        this.renderer.setSize(this.width, this.height * 0.847826087);
         this.renderer.setPixelRatio(window.devicePixelRatio);
         this.renderer.shadowMap.type = 2;
         this.renderer.outputEncoding = THREE.sRGBEncoding;

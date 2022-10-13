@@ -27,6 +27,7 @@
     methods: {
       initModelContainer() {
         this.model_container = document.getElementById(this.emitId);
+        // this.model_container.style.width = `${this.emitWidth}px`;
         this.width = this.emitWidth;
         this.height = this.emitWidth;
       },
