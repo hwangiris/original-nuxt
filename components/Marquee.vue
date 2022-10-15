@@ -24,28 +24,34 @@
         :emitId="'marquee-ring-lie-3'"
         :emitWidth="110"
       />
-      <VueSlickCarousel v-bind="settings">
-        <div
-          v-for="(item, index) in value"
-          :key="`Marquee-${index}`"
-        >
-          {{ item }}
-        </div>
-      </VueSlickCarousel>
-      <VueSlickCarousel v-bind="settings">
-        <div
-          v-for="(item, index) in value"
-          :key="`Marquee-${index}`"
-        >
-          {{ item }}
-        </div>
-      </VueSlickCarousel>
+      <div class="slick-slider-marquee">
+        <VueSlickCarousel v-bind="settings">
+          <div
+            v-for="(item, index) in value"
+            :key="`Marquee-${index}`"
+          >
+            {{ item }}
+          </div>
+        </VueSlickCarousel>
+        <VueSlickCarousel v-bind="settings">
+          <div
+            v-for="(item, index) in value"
+            :key="`Marquee-${index}`"
+          >
+            {{ item }}
+          </div>
+        </VueSlickCarousel>
+      </div>
     </div>
   </section>  
 </template>
 
 <script>
   import VueSlickCarousel from 'vue-slick-carousel'
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
 
   export default {
     data() {
@@ -75,10 +81,40 @@
         temp.push(element);
       });
       this.value = temp;
+      this.scrollAnimation();
+    },
+    methods: {
+      scrollAnimation() {
+        gsap.to('#marquee-ring-stand-1, #marquee-ring-stand-2', {
+          y: 50,
+          duration: 1,
+          scrollTrigger: {
+            trigger: ".slick-slider-marquee",
+            scrub: true
+          }
+        });
+        gsap.to('#marquee-ring-lie-2', {
+          y: -50,
+          duration: 1,
+          scrollTrigger: {
+            trigger: ".slick-slider-marquee",
+            scrub: true
+          }
+        });
+        gsap.to('#marquee-ring-lie-1, #marquee-ring-lie-3', {
+          y: 100,
+          duration: 1,
+          scrollTrigger: {
+            trigger: ".slick-slider-marquee",
+            scrub: true
+          }
+        });
+      }
     },
   }
 
 </script>
+
 <style lang="scss" scoped>
   @import "@/assets/sass/import";
 
@@ -155,29 +191,79 @@
     position: absolute;
   }
   #marquee-ring-lie-1 {
+    left: 15%;
     bottom: 0;
-    left: calc(((100% - 1224px) / 2) + 252px);
-    transform: scaleX(-1) rotate(135deg) translateY(-75%);
+    transform: scaleX(-1) rotate(135deg) translateY(-75%) scale(.385);
     z-index: 2;
+    @include media-breakpoint-up(md) {
+      transform: scaleX(-1) rotate(135deg) translateY(-75%);
+      left: calc(((100% - 720px) / 2) + 252px);
+    }
+    @include media-breakpoint-up(lg) {
+      left: calc(((100% - 960px) / 2) + 252px);
+    }
+    @include media-breakpoint-up(xl) {
+      left: calc(((100% - 1224px) / 2) + 252px);
+    }
   }
   #marquee-ring-lie-2 {
     top: 0;
-    right: calc(((100% - 1224px) / 2));
+    right: 5.6%;
     transform: scaleX(-1) translate(-50%, -50%);
+    @include media-breakpoint-up(md) {
+      right: calc((100% - 720px) / 2);
+    }
+    @include media-breakpoint-up(lg) {
+      right: calc((100% - 960px) / 2);
+    }
+    @include media-breakpoint-up(xl) {
+      right: calc((100% - 1224px) / 2);
+    }
   }
   #marquee-ring-lie-3 {
+    display: none;
     bottom: 0;
-    right: calc(((100% - 1224px) / 2));
     transform: scaleX(-1) rotate(160deg) translateY(-75%);
+    @include media-breakpoint-up(md) {
+      display: block;
+      right: calc((100% - 720px) / 2);
+    }
+    @include media-breakpoint-up(lg) {
+      right: calc((100% - 960px) / 2);
+    }
+    @include media-breakpoint-up(xl) {
+      right: calc((100% - 1224px) / 2);
+    }
   }
   #marquee-ring-stand-1 {
-    left: calc((100% - 1224px) / 2);
-    transform: rotate(90deg) translate(-50%, 50%);
+    left: 3.5%;
+    transform: rotate(90deg) translate(-50%, 50%) scale(.45);
+    @include media-breakpoint-up(md) {
+      transform: rotate(90deg) translate(-50%, 50%);
+      left: calc((100% - 720px) / 2);
+    }
+    @include media-breakpoint-up(lg) {
+      left: calc((100% - 960px) / 2);
+    }
+    @include media-breakpoint-up(xl) {
+      left: calc((100% - 1224px) / 2);
+    }
   }
   #marquee-ring-stand-2 {
-    top: 175px;
-    right: calc(((100% - 1224px) / 2) + 322px);
-    transform: translateY(-50%);
+    top: 40%;
+    right: 14%;
+    transform: translateY(-50%) scale(.55);
     z-index: 2;
+    @include media-breakpoint-up(md) {
+      top: 175px;
+      right: calc(((100% - 720px) / 2) + 152px);
+      transform: translateY(-50%);
+    }
+    @include media-breakpoint-up(lg) {
+      right: calc(((100% - 960px) / 2) + 232px);
+    }
+    @include media-breakpoint-up(xl) {
+      right: calc(((100% - 1224px) / 2) + 322px);
+    }
   }
 </style>

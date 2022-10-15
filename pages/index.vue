@@ -1,18 +1,25 @@
 <template>
   <main>
-    <Concept :emit-data="value.concept" />
-    <Collection :emit-data="value.collection" />
+    <Concept
+      :emit-data="value.concept"
+      class="section--concept"
+    />
+    <Collection
+      :emit-data="value.collection"
+      class="section--collection"
+    />
     <Service
       :emit-data="value.service"
+      :emit-height="height"
       class="section--service"
-      data-aos="fade-up"
-      :data-aos-offset="height"
     />
     <Marquee
       :emit-data="value.marquee"
       class="section--marquee"
     />
-    <Contact />
+    <Contact
+      class="section--contact"
+    />
   </main>
 </template>
 
@@ -72,7 +79,7 @@
       }
     },
     mounted() {
-      this.height = window.innerHeight / 2;
+      this.height = window.innerHeight / 3;
     },
   }
 </script>

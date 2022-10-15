@@ -3,16 +3,18 @@
     <div class="container">
       <Title>SERVICE</Title>
     </div>
-    <VueSlickCarousel v-bind="settings">
-      <div
-        v-for="(data, index) in emitData"
-        :key="`Service-${index}`"
-      >
-        <div v-html="data.icon" class="placement--svg"></div>
-        <h3>{{ data.title }}</h3>
-        <p>{{ data.preface }}</p>
-      </div>
-    </VueSlickCarousel>
+    <div data-aos="fade-up" :data-aos-offset="emitHeight">
+      <VueSlickCarousel v-bind="settings">
+        <div
+          v-for="(data, index) in emitData"
+          :key="`Service-${index}`"
+        >
+          <div v-html="data.icon" class="placement--svg"></div>
+          <h3>{{ data.title }}</h3>
+          <p>{{ data.preface }}</p>
+        </div>
+      </VueSlickCarousel>
+    </div>
   </section>
 </template>
 
@@ -27,10 +29,20 @@
           cssEase: 'fade',
           arrows: false,
           infinite: false,
+          responsive: [
+            {
+              breakpoint: 768,
+              settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                infinite: true,
+              }
+            }
+          ]
         }
       }
     },
-    props: ['emit-data'],
+    props: ['emit-data', 'emit-height'],
     components: { VueSlickCarousel },
   }
 </script>
@@ -53,6 +65,19 @@
       white-space: break-spaces;
     }
 
+    .slick-slider {
+      padding-right: 50px;
+      overflow: hidden;
+      @include media-breakpoint-up(md) {
+        padding-right: 0;
+      }
+    }
+    .slick-list {
+      overflow: visible;
+      @include media-breakpoint-up(md) {
+        overflow: hidden;
+      }
+    }
     .slick-track {
       display: flex !important;
       border: solid rgba($black, 0.1);
@@ -108,12 +133,13 @@
         path {
           stroke-dasharray: 300;
           stroke-dashoffset: 300;
-          @at-root #{$service}.aos-animate .slick-slide.slick-active svg path {
-            animation: pathAnimate 1s forwards alternate ease-in-out;
-          }
         }
       }
     }
+  }
+
+  .aos-animate .slick-slide.slick-active svg path {
+    animation: pathAnimate 1s forwards alternate ease-in-out;
   }
 
   @keyframes pathAnimate {

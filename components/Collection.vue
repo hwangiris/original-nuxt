@@ -8,6 +8,8 @@
           :key="`collection-${data.id}`"
           class="card"
           :class="`card--${index+1}`"
+          data-aos="fade-up"
+          :data-aos-delay="100 * index"
         >
           <div class="card-img">
             <img :src="data.img" :alt="data.title">

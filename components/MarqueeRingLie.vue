@@ -76,7 +76,6 @@
           loader.load(
             "/images/ring.glb",
             gltf => {
-              console.log(gltf.scene);
               let ringObj = gltf.scene;
 
               ringObj.rotation.x = Math.PI / 0.85;

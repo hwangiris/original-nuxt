@@ -44,11 +44,48 @@
 </template>
 
 <script>
+  import VueSlickCarousel from 'vue-slick-carousel'
+  import { gsap } from 'gsap';
+  import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+  gsap.registerPlugin(ScrollTrigger);
+
   export default {
     data () {
       return {}
     },
     props: ['emit-data'],
+    mounted() {
+      this.scrollAnimation();
+    },
+    methods: {
+      scrollAnimation() {
+        gsap.to('.kv__ring', {
+          y: 50,
+          duration: 1,
+          scrollTrigger: {
+            trigger: ".section--concept",
+            scrub: true
+          }
+        });
+        gsap.to('.kv__img--left', {
+          y: 100,
+          duration: 1,
+          scrollTrigger: {
+            trigger: ".section--concept",
+            scrub: true
+          }
+        });
+        gsap.to('.kv__img--right', {
+          y: -100,
+          duration: 1,
+          scrollTrigger: {
+            trigger: ".section--concept",
+            scrub: true
+          }
+        });
+      }
+    },
   }
 </script>
 
@@ -59,8 +96,12 @@
     position: relative;
     margin-bottom: 120px;
     overflow: hidden;
-    @media screen and (min-width: 1280px) {
-      margin-bottom: 200px;
+    @include media-breakpoint-up(lg) {
+      margin-bottom: 0;
+      padding-bottom: 120px;
+    }
+    @include media-breakpoint-up(xl) {
+      padding-bottom: 200px;
     }
 
     &::before {
@@ -72,11 +113,11 @@
       width: 100%;
       height: 100%;
       background-color: $primary-400;
-      @media screen and (min-width: 1024px) {
-        height: calc(100% - 60px);
+      @include media-breakpoint-up(lg) {
+        height: calc(100% - 180px);
       }
-      @media screen and (min-width: 1280px) {
-        height: calc(100% - 120px);
+      @include media-breakpoint-up(xl) {
+        height: calc(100% - 320px);
       }
     }
 
@@ -88,17 +129,17 @@
       margin: 0;
       justify-content: space-between;
       flex-direction: row-reverse;
-      @media screen and (min-width: 1280px) {
+      @include media-breakpoint-up(xl) {
         position: static;
       }
     }
     > .container {
       z-index: 1;
-      @media screen and (min-width: 1280px) {
+      @include media-breakpoint-up(xl) {
         position: absolute;
         top: 0;
         left: 50%;
-        height: 100%;
+        height: calc(100% - 200px);
         transform: translateX(-50%);
       }
 
@@ -107,14 +148,14 @@
         height: 100%;
         padding-top: 120px;
         padding-bottom: 40px;
-        @media screen and (min-width: 768px) {
+        @include media-breakpoint-up(md) {
           padding-top: 192px;
         }
-        @media screen and (min-width: 1024px) {
+        @include media-breakpoint-up(lg) {
           padding-top: 216px;
           padding-bottom: 160px;
         }
-        @media screen and (min-width: 1280px) {
+        @include media-breakpoint-up(xl) {
           padding-bottom: 216px;
         }
       }
@@ -122,25 +163,31 @@
   }
   .kv__ring {
     position: absolute;
-    top: 178px;
-    left: 50%;
+    top: 146px;
+    left: 22%;
     width: auto;
     padding: 0;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%) scale(.42);
     z-index: 2;
+    @include media-breakpoint-up(md) {
+      top: 116px;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
   }
   .kv__img {
     position: relative;
     &.kv__img--left {
+      top: -72px;
       padding-top: 120px;
       padding-left: 0;
       padding-right: 0;
       margin-right: -100%;
       width: calc((100% - 48px) - 7px);
-      @media screen and (min-width: 768px) {
+      @include media-breakpoint-up(md) {
         width: 50%;
       }
-      @media screen and (min-width: 1024px) {
+      @include media-breakpoint-up(lg) {
         padding-top: 178px;
         padding-right: calc(var(--bs-gutter-x) * .5);
         margin-right: 0;
@@ -148,30 +195,31 @@
       }
     }
     &.kv__img--right {
+      top: 72px;
       padding-left: 0;
       padding-right: 0;
       right: -20%;
       width: calc((100% - 48px) * 3 / 4);
-      @media screen and (min-width: 768px) {
+      @include media-breakpoint-up(md) {
         right: 0;
         width: calc( (696px / 4) + ((100% - 720px) / 2));
       }
-      @media screen and (min-width: 1024px) {
+      @include media-breakpoint-up(lg) {
         width: calc( (936px / 4) + ((100% - 960px) / 2));
       }
-      @media screen and (min-width: 1280px) {
+      @include media-breakpoint-up(xl) {
         padding-left: calc(var(--bs-gutter-x) * .5);
         width: calc( (1200px / 4) + ((100% - 1224px) / 2));
       }
       img {
         margin-top: -85px;
-        @media screen and (min-width: 768px) {
+        @include media-breakpoint-up(md) {
           margin-top: -60px;
         }
-        @media screen and (min-width: 1024px) {
+        @include media-breakpoint-up(lg) {
           margin-top: -85px;
         }
-        @media screen and (min-width: 1280px) {
+        @include media-breakpoint-up(xl) {
           margin-top: -200px;
         }
       }
@@ -200,7 +248,7 @@
       content: '';
       display: block;
       padding-top: 133.5%;
-      @media screen and (min-width: 768px) {
+      @include media-breakpoint-up(md) {
         display: none;
       }
     }
@@ -209,7 +257,7 @@
       > div:nth-child(2) {
         position: absolute;
         top: 13.5%;
-        @media screen and (min-width: 768px) {
+        @include media-breakpoint-up(md) {
           position: static;
         }
       }
@@ -230,14 +278,14 @@
     line-height: 0.8645833333;
     text-transform: capitalize;
     white-space: break-spaces;
-    @media screen and (min-width: 768px) {
+    @include media-breakpoint-up(md) {
       margin-bottom: 60px;
       margin-left: 0;
     }
-    @media screen and (min-width: 1024px) {
+    @include media-breakpoint-up(lg) {
       font-size: 4.5rem;
     }
-    @media screen and (min-width: 1280px) {
+    @include media-breakpoint-up(xl) {
       margin-bottom: 72px;
       font-size: 6rem;
     }
@@ -251,7 +299,7 @@
     font-weight: normal;
     text-transform: uppercase;
     writing-mode: vertical-rl;
-    @media screen and (min-width: 1024px) {
+    @include media-breakpoint-up(lg) {
       font-size: 1.5rem;
     }
     &::before {
@@ -274,10 +322,10 @@
     text-transform: capitalize;
     white-space: break-spaces;
     mix-blend-mode: overlay;
-    @media screen and (min-width: 768px) {
+    @include media-breakpoint-up(md) {
       display: block;
     }
-    @media screen and (min-width: 1280px) {
+    @include media-breakpoint-up(xl) {
       bottom: 34px;
       left: 72px;
       font-size: 7rem;
@@ -286,10 +334,10 @@
   p {
     margin-top: 24px;
     margin-bottom: 32px;
-    @media screen and (min-width: 768px) {
+    @include media-breakpoint-up(md) {
       margin-top: 0;
     }
-    @media screen and (min-width: 1280px) {
+    @include media-breakpoint-up(xl) {
       margin-bottom: 48px;
     }
   }
