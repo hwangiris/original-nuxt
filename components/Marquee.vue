@@ -161,7 +161,7 @@
       font-size: 80px;
       line-height: 1;
       text-transform: capitalize;
-      @media screen and (min-width: 768px) {
+      @include media-breakpoint-up(md) {
         padding-top: 0;
         padding-bottom: 0;
         font-size: 120px;
@@ -179,7 +179,7 @@
           height: 48px;
           background-color: $primary-300;
           transform: rotate(20deg);
-          @media screen and (min-width: 768px) {
+          @include media-breakpoint-up(md) {
             height: 96px;
           }
         }

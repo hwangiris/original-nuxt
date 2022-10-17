@@ -21,7 +21,7 @@
     width: 102px;
     mix-blend-mode: difference;
     z-index: 2;
-    @media screen and (min-width: 1024px) {
+    @include media-breakpoint-up(lg) {
       top: 32px;
       left: 48px;
       width: 129px;

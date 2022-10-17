@@ -84,13 +84,13 @@
   section {
     padding-top: 50px;
     padding-bottom: 20px;
-    background-color: #F2EEE6;
+    background-color: $primary-200;
     overflow: hidden;
-    @media screen and (min-width: 1024px) {
+    @include media-breakpoint-up(lg) {
       padding-top: 250px;
       padding-bottom: 250px;
     }
-    @media screen and (min-width: 1280px) {
+    @include media-breakpoint-up(xl) {
       padding-top: 355px;
       padding-bottom: 355px;
     }
@@ -100,7 +100,7 @@
     h2 {
       color: $primary-400;
       margin-bottom: 30px;
-      @media screen and (min-width: 1024px) {
+      @include media-breakpoint-up(lg) {
         margin-bottom: 0;
       }
     }
@@ -110,11 +110,11 @@
       margin-bottom: 0;
       background-color: $primary-400;
       border: 0;
-      @media screen and (min-width: 1024px) {
+      @include media-breakpoint-up(lg) {
         display: block;
         width: calc(960px / 4 + 24px);
       }
-      @media screen and (min-width: 1280px) {
+      @include media-breakpoint-up(xl) {
         width: calc(1200px / 4 + 24px);
       }
     }
@@ -129,12 +129,12 @@
         height: auto;
         margin-top: -37.5%;
         margin-left: -58.1666666667%;
-        @media screen and (min-width: 768px) {
+        @include media-breakpoint-up(md) {
           width: 97.475%;
           margin-left: -48.7375%;
         }
         path {
-          fill: #DFAD77;
+          fill: $primary-400;
           fill-opacity: 0.1;
         }
       }
@@ -145,10 +145,10 @@
         margin-right: auto;
         transform: rotate(-15deg);
         z-index: 1;
-        @media screen and (min-width: 768px) {
+        @include media-breakpoint-up(md) {
           width: 58.225%;
         }
-        @media screen and (min-width: 1024px) {
+        @include media-breakpoint-up(lg) {
           position: absolute;
           top: 50%;
           left: 50%;
@@ -163,7 +163,7 @@
         z-index: 1;
         svg {
           width: 28px;
-          @media screen and (min-width: 1024px) {
+          @include media-breakpoint-up(lg) {
             width: 35px;
           }
         }

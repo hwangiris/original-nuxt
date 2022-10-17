@@ -88,7 +88,7 @@
       height: auto !important;
       padding: 24px;
       border-left: 1px solid rgba($black, 0.1);
-      @media screen and (min-width: 768px) {
+      @include media-breakpoint-up(md) {
         padding: 40px;
       }
 
@@ -100,7 +100,7 @@
       &:nth-child(odd) {
         svg {
           margin: 35px 64px 14px 64px;
-          @media screen and (min-width: 768px) {
+          @include media-breakpoint-up(md) {
             margin: 48px 60px;
           }
         }
@@ -111,13 +111,13 @@
         }
         svg {
           margin: 22px 58px 14px;
-          @media screen and (min-width: 768px) {
+          @include media-breakpoint-up(md) {
             margin: 40px 52px;
           }
         }
         p {
           margin-bottom: 16px;
-          @media screen and (min-width: 768px) {
+          @include media-breakpoint-up(md) {
             margin-bottom: 69px;
           }
         }
@@ -126,7 +126,7 @@
       svg {
         width: auto;
         height: 160px;
-        @media screen and (min-width: 768px) {
+        @include media-breakpoint-up(md) {
           height: 160px;
         }
   

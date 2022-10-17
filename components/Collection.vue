@@ -52,12 +52,12 @@ import Title from "./Title.vue";
   .col--grid {
     align-items: flex-start;
     gap: 24px;
-    @media screen and (min-width: 768px) {
+    @include media-breakpoint-up(md) {
       display: grid;
       grid-template-rows: 134px auto 15px auto;
       grid-template-columns: 2fr 3fr;
     }
-    @media screen and (min-width: 1024px) {
+    @include media-breakpoint-up(lg) {
       grid-template-rows: 254px 18px auto;
       grid-template-columns: 3fr 5fr 4fr;
     }
@@ -65,7 +65,7 @@ import Title from "./Title.vue";
   .col--btn {
     margin-top: 40px;
     text-align: right;
-    @media screen and (min-width: 1024px) {
+    @include media-breakpoint-up(lg) {
       margin-top: 6px;
     }
   }
@@ -74,17 +74,17 @@ import Title from "./Title.vue";
     margin-bottom: 0;
     grid-column: 1;
     grid-row: 1;
-    @media screen and (min-width: 768px) {
+    @include media-breakpoint-up(md) {
       padding-bottom: 104px;
     }
-    @media screen and (min-width: 1024px) {
+    @include media-breakpoint-up(lg) {
       padding-top: 118px;
     }
   }
   .card {
     position: relative;
     margin-top: 8px;
-    @media screen and (min-width: 768px) {
+    @include media-breakpoint-up(md) {
       margin-top: 0;
     }
     .card-img {
@@ -119,11 +119,11 @@ import Title from "./Title.vue";
       grid-column: 1;
       grid-row-start: 2;
       grid-row-end: 3;
-      @media screen and (min-width: 1024px) {
+      @include media-breakpoint-up(lg) {
         grid-row-end: 4;
       }
       .card-img::after {
-        @media screen and (min-width: 768px) {
+        @include media-breakpoint-up(md) {
           padding-top: 129.0780141844%;
         }
       }
@@ -132,11 +132,11 @@ import Title from "./Title.vue";
       grid-column: 2;
       grid-row-start: 1;
       grid-row-end: 4;
-      @media screen and (min-width: 1024px) {
+      @include media-breakpoint-up(lg) {
         margin-top: 128px;
       }
       .card-img::after {
-        @media screen and (min-width: 768px) {
+        @include media-breakpoint-up(md) {
           padding-top: 134.7736625514%;
         }
       }
@@ -144,12 +144,12 @@ import Title from "./Title.vue";
     &.card--3 {
       grid-column: 1;
 
-      @media screen and (min-width: 1024px) {
+      @include media-breakpoint-up(lg) {
         grid-column: 3;
         grid-row: 1 / span 2;
       }
       .card-img::after {
-        @media screen and (min-width: 768px) {
+        @include media-breakpoint-up(md) {
           padding-top: 77.0833333333%;
         }
       }
@@ -158,15 +158,15 @@ import Title from "./Title.vue";
       grid-column: 2;
       grid-row: 4 / span 1;
 
-      @media screen and (min-width: 768px) {
+      @include media-breakpoint-up(md) {
         width: 75%;
       }
-      @media screen and (min-width: 1024px) {
+      @include media-breakpoint-up(lg) {
         grid-column: 3;
         grid-row: 3 / span 1;
       }
       .card-img::after {
-        @media screen and (min-width: 768px) {
+        @include media-breakpoint-up(md) {
           padding-top: 106.7375886525%;
         }
       }

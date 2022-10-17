@@ -20,6 +20,8 @@
 </template>
 
 <style lang="scss" scoped>
+  @import "@/assets/sass/import";
+
   nav {
     position: fixed;
     top: 32px;
@@ -28,14 +30,14 @@
     align-items: center;
     gap: 24px;
     padding: 16px 40px;
-    color: #131313;
+    color: $gray-300;
     text-transform: capitalize;
-    background-color: #F0EDE8;
+    background-color: $primary-100;
     box-shadow: 0px 4px 24px rgba(#ACACAC, 0.2);
     border-radius: 50px;
     z-index: 2;
 
-    @media screen and (min-width: 1024px) {
+    @include media-breakpoint-up(lg) {
       display: flex;
     }
 
@@ -58,14 +60,14 @@
         stroke: currentColor;
       }
       &:hover {
-        color: #DFAD77;
+        color: $primary-400;
       }
     }
     hr {
       width: 1px;
       height: 24px;
       margin: 0;
-      background-color: #DFAD77;
+      background-color: $primary-400;
       border-width: 0;
       transform: rotate(20deg);
     }

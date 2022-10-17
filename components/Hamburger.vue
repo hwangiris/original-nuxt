@@ -15,7 +15,7 @@
     border: 0;
     border-radius: 50px;
     z-index: 2;
-    @media screen and (min-width: 1024px) {
+    @include media-breakpoint-up(lg) {
       display: none;
     }
 

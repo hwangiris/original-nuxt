@@ -24,7 +24,7 @@
     font-size: 1.25rem;
     font-weight: normal;
     text-transform: uppercase;
-    @media screen and (min-width: 1024px) {
+    @include media-breakpoint-up(lg) {
       font-size: 1.5rem;
     }
 

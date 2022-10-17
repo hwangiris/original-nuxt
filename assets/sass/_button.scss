@@ -16,7 +16,7 @@ a {
   background-image: url("data:image/svg+xml,%3Csvg width='50' height='50' viewBox='0 0 50 50' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17 29L33 23.5455L27.5455 21' stroke='" + encodecolor($value) + "'/%3E%3C/svg%3E%0A");
   background-size: contain;
 
-  @media screen and (min-width: 768px) {
+  @include media-breakpoint-up(md) {
     background-image: url("data:image/svg+xml,%3Csvg width='65' height='64' viewBox='0 0 65 64' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M23.5 36.1887L41.5 30.0524L35.3636 27.1887' stroke='" + encodecolor($value) + "'/%3E%3C/svg%3E%0A");
   }
 }
@@ -36,9 +36,9 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 24px;
-  color: #505050;
+  color: $gray-200;
   &:hover {
-    color: #DFAD77;
+    color: $primary-400;
   }
   &:active {
     color: #D68F4C;
@@ -47,10 +47,10 @@ a {
     width: 48px;
     height: 48px;
     @include arrow($black);
-    border: 1px solid rgba(#505050, .3);
+    border: 1px solid rgba($gray-200, .3);
     border-radius: 50%;
 
-    @media screen and (min-width: 768px) {
+    @include media-breakpoint-up(md) {
       width: 65px;
       height: 65px;
     }
@@ -73,11 +73,11 @@ a {
       @at-root :not([disabled])#{&} {
         @at-root {
           :hover#{&}, :active#{&} {
-            @include arrow(#DFAD77);
+            @include arrow($primary-400);
             background-color: currentColor;
           }
           :active#{&} {
-            color: #F2EEE6;
+            color: $primary-200;
           }
         }
       }
@@ -94,11 +94,11 @@ a {
   min-width: 180px;
   text-transform: capitalize;
   text-align: center;
-  background-color: #F0EDE8;
+  background-color: $primary-100;
   box-shadow: 0px 4px 32px -8px rgba(#ACACAC, 0.2);
   border-radius: 50px;
   &:hover {
-    background-color: #DBBB76;
+    background-color: $primary-300;
   }
   &:active {
     background-color: #D68F4C;
@@ -111,14 +111,14 @@ a {
   justify-content: center;
   width: 104px;
   height: 104px;
-  background-color: #DFAD77;
+  background-color: $primary-400;
   border-radius: 50%;
-  @media screen and (min-width: 768px) {
+  @include media-breakpoint-up(md) {
     width: 144px;
     height: 144px;
   }
   &:hover {
-    background-color: #DBBB76;
+    background-color: $primary-300;
   }
   &:active {
     background-color: #D68F4C;

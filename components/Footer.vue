@@ -8,25 +8,27 @@
           <li><a href="#!">Brand Site</a></li>
         </ul>
       </nav>
-      <p>
-        © original COSME JAPAN CO.,LTD
-      </p>
+      <div class="copyright">
+        &copy; original COSME JAPAN CO.,LTD
+      </div>
     </div>
   </footer>
 </template>
 
 <style lang="scss" scoped>
+  @import "@/assets/sass/import";
+
   footer {
     padding-top: 64px;
     padding-bottom: 50px;
-    color: #505050;
-    @media screen and (min-width: 768px) {
+    color: $gray-200;
+    @include media-breakpoint-up(md) {
       padding-top: 120px;
     }
 
     .container {
       align-items: baseline;
-      @media screen and (min-width: 768px) {
+      @include media-breakpoint-up(md) {
         display: flex;
       }
     }
@@ -34,14 +36,14 @@
       width: 102px;
       margin-bottom: 24px;
       mix-blend-mode: difference;
-      @media screen and (min-width: 768px) {
+      @include media-breakpoint-up(md) {
         width: 129px;
         margin-bottom: 0;
       }
     }
-    p {
+    .copyright {
       margin: 72px 0 0;
-      @media screen and (min-width: 768px) {
+      @include media-breakpoint-up(md) {
         margin-top: 0;
         margin-left: auto;
       }
@@ -50,13 +52,13 @@
   nav {
     text-transform: capitalize;
     z-index: 2;
-    @media screen and (min-width: 768px) {
+    @include media-breakpoint-up(md) {
       margin-left: 40px;
     }
-    @media screen and (min-width: 1024px) {
+    @include media-breakpoint-up(lg) {
       margin-left: 100px;
     }
-    @media screen and (min-width: 1280px) {
+    @include media-breakpoint-up(xl) {
       margin-left: 180px;
     }
 
@@ -79,7 +81,7 @@
           display: block;
           width: 1px;
           height: 1rem;
-          background-color: #131313;
+          background-color: $gray-300;
           transform: rotate(20deg);
           opacity: 0.3;
         }
@@ -95,14 +97,14 @@
         stroke: currentColor;
       }
       &:hover {
-        color: #DFAD77;
+        color: $primary-400;
       }
     }
     hr {
       width: 1px;
       height: 24px;
       margin: 0;
-      background-color: #DFAD77;
+      background-color: $primary-400;
       border-width: 0;
       transform: rotate(20deg);
     }
