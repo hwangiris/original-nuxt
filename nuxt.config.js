@@ -46,6 +46,9 @@ export default {
       'three',
       'gsap',
     ],
+    babel: {
+      compact: true,
+    },
   },
 
   loading: '~/components/Loading.vue',
